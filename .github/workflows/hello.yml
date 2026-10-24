@@ -1,0 +1,21 @@
+name: Hello World
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Say hello
+        run: echo "Hello, World!"
+
+      - name: Show date and runner info
+        run: |
+          date
+          uname -a
